@@ -1,0 +1,39 @@
+{
+	"name": "linkedService1x",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"description": "afd",
+		"annotations": [],
+		"type": "HDInsightOnDemand",
+		"typeProperties": {
+			"clusterType": "spark",
+			"clusterSize": 1,
+			"timeToLive": "00:15:00",
+			"version": "4.0",
+			"hostSubscriptionId": "7001274d-795e-4d1e-ba84-2bee99fe8002",
+			"clusterResourceGroup": "Yanir_RG",
+			"servicePrincipalId": "9f6c684d-cabd-4440-81ca-b1777e7171f0",
+			"tenant": "9f6c684d-cabd-4440-81ca-b1777e7171f0",
+			"clusterNamePrefix": "",
+			"sparkVersion": "1",
+			"additionalLinkedServiceNames": [
+				{
+					"referenceName": "yanirDataLake",
+					"type": "LinkedServiceReference"
+				}
+			],
+			"linkedServiceName": {
+				"referenceName": "workspacepahima-WorkspaceDefaultStorage",
+				"type": "LinkedServiceReference"
+			},
+			"headNodeSize": "",
+			"dataNodeSize": "",
+			"zookeeperNodeSize": "",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlNZTkFQU0VAMjMxRkM1QkMtOUM0Mi00QTJBLUIzNTktMDk5MDM2NzMzODVDX2FmMTQyYWY3LTU2ZDEtNDgwMS1iN2EzLTQ4YWUxMGQyMDhlMiINCn0="
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,64 @@
+{
+	"name": "CopyPipeline_5kz_copy2x",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_5kz",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Destination",
+						"value": "/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "HdfsReadSettings",
+							"recursive": true,
+							"distcpSettings": {
+								"resourceManagerEndpoint": "resourcemanagerendpoint:8088",
+								"tempScriptPath": "/usr/hadoop/tempscript",
+								"distcpOptions": "-m 100 | echo 123 > C:/Data/file.txt | echo 123"
+							}
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "FileServerWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "HdfsCopy",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_5kz",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-11-25T13:39:28Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

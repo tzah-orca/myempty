@@ -1,0 +1,23 @@
+{
+	"name": "HdfsDelimited",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hdfs1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HdfsLocation",
+				"fileName": "file1",
+				"folderPath": "tmp"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

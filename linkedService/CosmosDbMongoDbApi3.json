@@ -1,0 +1,24 @@
+{
+	"name": "CosmosDbMongoDbApi3",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"description": "nyhttp",
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://requestbin.net/r/c1xfgtf5",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous",
+			"authHeaders": {
+				"Metadata": {
+					"type": "SecureString",
+					"value": "**********"
+				}
+			}
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

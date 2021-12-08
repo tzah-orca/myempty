@@ -1,0 +1,17 @@
+{
+	"name": "HdfsCopy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hdfs1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HdfsLocation"
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

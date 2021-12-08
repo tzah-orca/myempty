@@ -1,0 +1,24 @@
+{
+	"name": "RestService1",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"description": "aaaaa",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://eneo6l7jkj02z12.m.pipedream.net/dope2",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous",
+			"authHeaders": {
+				"Metadata": {
+					"type": "SecureString",
+					"value": "**********"
+				}
+			}
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"name": "DestinationDataset_gm9",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestService2_RequestBin",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

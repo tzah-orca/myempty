@@ -1,0 +1,17 @@
+{
+	"name": "ControllerBinaryRequest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "controller",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

@@ -1,0 +1,20 @@
+{
+	"name": "yanirDataLakeDestination",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "yanirDataLake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "file",
+				"folderPath": "dir",
+				"container": "container1"
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

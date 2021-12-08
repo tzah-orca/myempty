@@ -1,0 +1,37 @@
+{
+	"name": "Pipeline 5",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"description": "Run",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://7f000001.12c0ce6e.rbndr.us:29877",
+					"connectVia": {
+						"referenceName": "AutoResolveIntegrationRuntime",
+						"type": "IntegrationRuntimeReference"
+					},
+					"method": "PUT",
+					"body": {
+						"value": "hi",
+						"type": "Expression"
+					},
+					"disableCertValidation": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-11-29T15:37:18Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}
