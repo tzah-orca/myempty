@@ -1,0 +1,17 @@
+{
+	"name": "nowmaybe",
+	"properties": {
+		"type": "Managed",
+		"typeProperties": {
+			"computeProperties": {
+				"location": "West US 2",
+				"dataFlowProperties": {
+					"computeType": "MemoryOptimized",
+					"coreCount": 8,
+					"timeToLive": 0,
+					"cleanup": false
+				}
+			}
+		}
+	}
+}
